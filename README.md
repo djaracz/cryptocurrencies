@@ -8,7 +8,7 @@ React SPA is bootstrapped with Create React App
 
 State management is done with Redux
 
-Application contains example React component unit tests (<Autocomplete />)
+Application contains example React component unit tests (Autocomplete component)
 
 
 # Setup
