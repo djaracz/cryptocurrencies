@@ -12,6 +12,7 @@ export interface AutocompleteProps<O> {
   values: AutocompleteValue<O, true, false, true>;
   textFieldProps: Partial<TextFieldProps>;
   getOptionLabel: (option: O) => string;
+  getOptionDisabled: (option: O) => boolean;
   onChange: (selectedOptions: O[]) => void;
 }
 
@@ -21,6 +22,7 @@ export const Autocomplete = <O,>({
   values,
   textFieldProps,
   getOptionLabel,
+  getOptionDisabled,
   onChange,
 }: AutocompleteProps<O>) => {
   const handleOnChange = useCallback(
@@ -37,7 +39,8 @@ export const Autocomplete = <O,>({
       sx={{ width: "100%" }}
       disabled={disabled}
       onChange={handleOnChange}
-      value={values as any}
+      value={values as O[]}
+      getOptionDisabled={getOptionDisabled}
       renderTags={(options) =>
         options.reduce(
           (acc, o) =>

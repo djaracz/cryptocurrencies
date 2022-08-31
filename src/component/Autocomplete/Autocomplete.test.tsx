@@ -18,6 +18,7 @@ const renderComponent = (partialProps: Partial<AutocompleteProps<Coin>>) => {
       }}
       disabled={false}
       getOptionLabel={(c) => c.name}
+      getOptionDisabled={() => true}
       onChange={onChange}
       options={coins}
       values={[]}
