@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/selected-cryptocurrencies/static/css/main.4c2dfac1.css",
-    "main.js": "/selected-cryptocurrencies/static/js/main.7649b6a7.js",
+    "main.js": "/selected-cryptocurrencies/static/js/main.0902f980.js",
     "static/js/787.147a5108.chunk.js": "/selected-cryptocurrencies/static/js/787.147a5108.chunk.js",
     "static/media/empty_state.png": "/selected-cryptocurrencies/static/media/empty_state.f4d24098289be7099fc3.png",
     "index.html": "/selected-cryptocurrencies/index.html",
     "main.4c2dfac1.css.map": "/selected-cryptocurrencies/static/css/main.4c2dfac1.css.map",
-    "main.7649b6a7.js.map": "/selected-cryptocurrencies/static/js/main.7649b6a7.js.map",
+    "main.0902f980.js.map": "/selected-cryptocurrencies/static/js/main.0902f980.js.map",
     "787.147a5108.chunk.js.map": "/selected-cryptocurrencies/static/js/787.147a5108.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c2dfac1.css",
-    "static/js/main.7649b6a7.js"
+    "static/js/main.0902f980.js"
   ]
 }
