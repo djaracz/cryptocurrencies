@@ -17,7 +17,7 @@ export const Content = ({ children }: ContentProps) => {
 
   const handleOpenAddDialog = useCallback(
     () => dispatch(setAddCoins(true)),
-    []
+    [dispatch]
   );
 
   return (

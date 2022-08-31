@@ -26,7 +26,7 @@ export const Autocomplete = <O,>({
   const handleOnChange = useCallback(
     (e: SyntheticEvent, values: AutocompleteValue<O, true, false, true>) =>
       onChange(values as O[]),
-    []
+    [onChange]
   );
 
   return (

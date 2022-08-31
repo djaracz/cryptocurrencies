@@ -22,7 +22,7 @@ export const CryptocurrenciesPage = () => {
 
   const handleOpenAddDialog = useCallback(
     () => dispatch(setAddCoins(true)),
-    []
+    [dispatch]
   );
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const CryptocurrenciesPage = () => {
     if (cachedCryptocurrencies.length) {
       dispatch(setSelectedItems(cachedCryptocurrencies));
     }
-  }, []);
+  }, [dispatch]);
 
   const coinCards = useMemo(
     () =>

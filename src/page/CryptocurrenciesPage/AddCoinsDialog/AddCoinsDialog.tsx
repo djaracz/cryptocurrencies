@@ -22,7 +22,10 @@ export const AddCoinsDialog = () => {
   const [selectedCoins, setSelectedCoins] = useState<Coin[]>(selectedItems);
   const coins = useAppSelector(({ coins }) => coins.items);
 
-  const handleClose = useCallback(() => dispatch(setAddCoins(false)), []);
+  const handleClose = useCallback(
+    () => dispatch(setAddCoins(false)),
+    [dispatch]
+  );
   const handleDelete = useCallback(
     (coinId: Coin["id"]) => () =>
       setSelectedCoins((coins) => coins.filter((c) => c.id !== coinId)),
@@ -32,7 +35,7 @@ export const AddCoinsDialog = () => {
     saveCryptocurrencies(selectedCoins);
     dispatch(setSelectedItems(selectedCoins));
     handleClose();
-  }, [selectedCoins]);
+  }, [selectedCoins, dispatch, handleClose]);
 
   const allCurrenciesSelected = selectedCoins.length >= 5;
 

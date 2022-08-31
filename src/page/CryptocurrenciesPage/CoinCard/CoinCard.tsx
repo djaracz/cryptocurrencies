@@ -35,7 +35,7 @@ export const CoinCard = ({ coin, colorIndex }: CoinCardProps) => {
 
   const handleRemove = useCallback(() => {
     dispatch(removeSelectedItem(coin.id));
-  }, [coin]);
+  }, [coin, dispatch]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +49,7 @@ export const CoinCard = ({ coin, colorIndex }: CoinCardProps) => {
         setStatus("succeeded");
       })
       .catch(() => setStatus("failed"));
-  }, []);
+  }, [coin]);
 
   return (
     <StyledCard>
