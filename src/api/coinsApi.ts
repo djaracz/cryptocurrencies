@@ -22,10 +22,9 @@ const getMarketChart = async (
   coinId: string,
   dailyInterval: boolean = false
 ): Promise<MarketChartResponse> => {
-  const filters = dailyInterval
-    ? `${defaultMarketChartFilters}&interval=daily`
-    : defaultMarketChartFilters;
-  return await apiClient.get(`${domain}/${coinId}/market_chart?${filters}`);
+  return await apiClient.get(
+    `${domain}/${coinId}/market_chart?${defaultMarketChartFilters}`
+  );
 };
 
 export const coinApi = {

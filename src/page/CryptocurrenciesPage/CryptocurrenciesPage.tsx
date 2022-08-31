@@ -1,4 +1,4 @@
-import { Card, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { Fragment, useCallback, useEffect, useMemo } from "react";
 import emptyStateImg from "../../img/empty_state.png";
 import { loadCoins, setSelectedItems } from "../../store/coins/slice";
@@ -18,7 +18,6 @@ export const CryptocurrenciesPage = () => {
   const dispatch = useAppDispatch();
   const succeeded = useAppSelector(({ coins }) => coins.status === "succeeded");
   const failed = useAppSelector(({ coins }) => coins.status === "failed");
-  const coins = useAppSelector(({ coins }) => coins.items);
   const selectedItems = useAppSelector(({ coins }) => coins.selectedItems);
 
   const handleOpenAddDialog = useCallback(

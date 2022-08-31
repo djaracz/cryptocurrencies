@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Toolbar, Button, Typography, Box } from "@mui/material";
+import { Toolbar, Typography, Box } from "@mui/material";
 
 export const StyledToolbar = styled(Toolbar)(`
   height: 70px;

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { CoinsState } from "./type";
 import { coinApi } from "../../api/coinsApi";
+import { saveCryptocurrencies } from "../../utils/cacheCryptocurrencies";
 import { Coin } from "../../model/Coin";
 
 const initialState: CoinsState = {
@@ -25,6 +26,7 @@ const coinsSlice = createSlice({
       const newSelectedItems = state.selectedItems.filter(
         (i) => i.id !== action.payload
       );
+      saveCryptocurrencies(newSelectedItems);
       state.selectedItems = newSelectedItems;
     },
   },

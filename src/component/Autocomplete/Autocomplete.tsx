@@ -3,22 +3,23 @@ import {
   Autocomplete as MUIAutocomplete,
   AutocompleteValue,
   TextField,
+  TextFieldProps,
 } from "@mui/material";
 
 export interface AutocompleteProps<O> {
-  loading: boolean;
   options: O[];
   disabled: boolean;
   values: AutocompleteValue<O, true, false, true>;
+  textFieldProps: Partial<TextFieldProps>;
   getOptionLabel: (option: O) => string;
   onChange: (selectedOptions: O[]) => void;
 }
 
 export const Autocomplete = <O,>({
   options,
-  loading,
   disabled,
   values,
+  textFieldProps,
   getOptionLabel,
   onChange,
 }: AutocompleteProps<O>) => {
@@ -45,12 +46,7 @@ export const Autocomplete = <O,>({
         )
       }
       renderInput={(params) => (
-        <TextField
-          {...params}
-          variant="outlined"
-          label="Select cryptocurrencies"
-          placeholder="Select up to 5 cryptocurrencies"
-        />
+        <TextField {...params} variant="outlined" {...textFieldProps} />
       )}
     />
   );

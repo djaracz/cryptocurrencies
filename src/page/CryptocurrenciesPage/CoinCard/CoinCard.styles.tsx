@@ -12,8 +12,8 @@ export const StyledCard = styled(Card)(`
 export const TitleCardContent = styled(CardContent)(`
   flex: 1;
   display: flex;
-  align-items: center;
-  `);
+  flex-direction: column;
+`);
 
 export const ChartCardContent = styled(CardContent)(`
   flex: 3;
@@ -21,11 +21,17 @@ export const ChartCardContent = styled(CardContent)(`
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 340px;
 `);
 
 export const CoinName = styled(Typography)(`
   color: #ffffff;
   font-size: 18px;
+`);
+
+export const Price = styled(Typography)(`
+  color: #ffffff;
+  font-size: 16px;
 `);
 
 export const RemoveIconButton = styled(IconButton)(`

@@ -19,6 +19,7 @@ import {
   CoinName,
   ChartCardContent,
   RemoveIconButton,
+  Price,
 } from "./CoinCard.styles";
 
 export interface CoinCardProps {
@@ -54,8 +55,9 @@ export const CoinCard = ({ coin, colorIndex }: CoinCardProps) => {
     <StyledCard>
       <TitleCardContent sx={{ background: bgColors[colorIndex] }}>
         <CoinName>{coin.name}</CoinName>
+        <Price>Price: {coin.current_price}$</Price>
       </TitleCardContent>
-      <ChartCardContent sx={{ width: "340px" }}>
+      <ChartCardContent>
         {status === "failed" && <>Someting went wrong, try again later...</>}
         {status === "pending" && <CircularProgress />}
         {status === "succeeded" && (

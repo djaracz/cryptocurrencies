@@ -17,10 +17,9 @@ import {
 } from "./AddCoinsDialog.styles";
 
 export const AddCoinsDialog = () => {
+  const dispatch = useAppDispatch();
   const selectedItems = useAppSelector(({ coins }) => coins.selectedItems);
   const [selectedCoins, setSelectedCoins] = useState<Coin[]>(selectedItems);
-  const dispatch = useAppDispatch();
-  const loading = useAppSelector(({ coins }) => coins.status === "pending");
   const coins = useAppSelector(({ coins }) => coins.items);
 
   const handleClose = useCallback(() => dispatch(setAddCoins(false)), []);
@@ -48,8 +47,11 @@ export const AddCoinsDialog = () => {
       <StyledDialogContent>
         <Autocomplete
           options={coins}
-          loading={loading}
           values={selectedCoins}
+          textFieldProps={{
+            label: "Select cryptocurrencies",
+            placeholder: "Select up to 5 cryptocurrencies",
+          }}
           getOptionLabel={(c) => c.name}
           disabled={allCurrenciesSelected}
           onChange={(coins) => setSelectedCoins(coins)}
